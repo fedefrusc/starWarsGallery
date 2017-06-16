@@ -1,0 +1,40 @@
+CASI D'USO DEL PROGETTO FINALE DI SIW: IL MUSEO DI STAR WARS
+SCENARIO PRINCIPALE DI SUCCESSO
+
+UC1: Inserimento opera - Attore: Amministratore
+
+1) un Amministratore vuole inserire una nuova opera nel Sistema.
+2) L'Amministratore inserisce la propria email e la sua password. Il Sistema verifica la correttezza dei dati immessi e autentica l'Amministratore. Il Sistema mostra un messaggio di benvenuto con il ruolo(admin) dell'Amministratore.
+3)L'Amministratore sceglie l'attività "Inserisci opera".
+4)L'Amministratore inserisce il titolo dell'opera, l'anno di realizzazione, la tecnica usata, le dimensioni, il path dell'immagine.
+5)Il Sistema mostra l'elenco degli autori.
+6)L'Amministratore seleziona l'autore nell'elenco mostrato.
+7)L'Amministratore conferma l'inserimento dell'opera. Il Sistema registra tutte le informazioni sull'opera. Da questo momento in poi, gli Utenti del Sistema potranno cercare e visualizzare l'opera.
+
+UC2-A: Ricerca opera da visualizzare (per autore) - Attore: Utente
+
+1)Un Utente vuole consultare le opere presenti nel Sistema.
+2)L'Utente inserisce il proprio codice identificativo e la sua password. Il Sistema verifica la correttezza dei dati immessi e autentica l'Utente. Il Sistema mostra un messaggio di benvenuto con nome, cognome e ruolo(user) dell'Utente.
+3)L'Utente sceglie l'attività "Menu di navigazione" e seleziona la modalità "Naviga per autori".
+4)Il sistema mostra l'elenco degli autori.
+5)L'Utente seleziona l'autore dell'opera cercata.
+6)Il Sistema mostra l'elenco delle opere dell'autore selezionato. Per ciascuna opera il Sistema mostra la descrizione(insieme di tutte le variabili d'istanza).
+
+UC2-B: Ricerca opera da visualizzare (per anno) - Attore: Utente
+
+1)Un Utente vuole consultare le opere presenti nel Sistema.
+2)L'Utente inserisce il proprio codice identificativo e la sua password. Il Sistema verifica la correttezza dei dati immessi e autentica l'Utente. Il Sistema mostra un messaggio di benvenuto con nome, cognome e ruolo(user) dell'Utente.
+3)L'Utente sceglie l'attività "Menu di navigazione" e seleziona la modalità "Naviga per anno".
+4)Il sistema mostra l'elenco degli anni di realizzazione.
+5)L'Utente seleziona l'anno dell'opera cercata.
+6)Il Sistema mostra l'elenco delle opere dell'anno selezionato. Per ciascuna opera il Sistema mostra la descrizione(insieme di tutte le variabili d'istanza).
+
+(formato breve)
+UC3: Cancellazione opera - Attore: Amministratore
+L'Amministratore può cercare l'opera che vuole eliminare (caso d'uso UC2-A o UC2-B) e cancellarla.
+
+(fomato breve)
+UC4: Registrazione Utente - Attore: Utente
+1)L'Utente vuole registrarsi al sito della Galleria di Star Wars.
+2)L'Utente inserisce la propria email, una password, nome e cognome.
+3)L'Utente conferma la propria registrazione. Il sistema mostra email, nome e cognome dell'Utente.
