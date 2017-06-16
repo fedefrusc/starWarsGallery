@@ -1,0 +1,239 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Font google -->
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet"></link>
+<!-- Foglio di stile -->
+<!--  <link rel="styleSheet" href="css/starwars-index.css"></link>-->
+<style>
+.navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 15px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+.navbar-brand{
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  padding-top: 5px;
+  
+}
+body{
+	font-family: 'Russo One', sans-serif;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: url(images/backgroundInfoAdmin.jpeg) no-repeat center top;
+	position: fixed;
+	z-index: -1;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color :#c0c0c0;
+}
+.conteiner{
+	 padding: 90px 120px;
+	
+}
+.imageGalleryInfo{
+padding: 100px 600px;
+ position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 500px;
+   height: 500px;
+   margin-top: -220px; /* Half the height */
+   margin-left: -750px; /* Half the width */
+}
+.bg-0{
+	
+	background: black;
+	border:100px solid black;
+	
+	
+	
+}
+p{
+	font-size: 18;
+}
+.descrizione{
+	background: black;
+}
+.bg-1 {
+      background: #4d4d4d;
+      color: #bdbdbd;
+  }
+span{
+	font-family: 'Russo One', sans-serif;
+	color: black;
+	font-size: 28;
+	text-align:left;
+	padding: 10px 0;
+	position: relative;
+	top:300px;
+	left: 150px;
+}
+.form{
+	font-family: 'Russo One', sans-serif;
+	color: black;
+	font-size: 28;
+	text-align:left;
+	padding: 10px 0;
+	position: relative;
+	top:300px;
+	left: 150px;}
+.title {
+	font-family: 'Russo One', sans-serif;
+	color: white;
+	font-size: 30;
+	position: relative;
+	top:280px;
+	left: 150px;
+}
+
+#lightbox .modal-content {
+    display: inline-block;
+    text-align: center;   
+}
+
+#lightbox .close {
+    opacity: 1;
+    color: rgb(255, 255, 255);
+    background-color: rgb(25, 25, 25);
+    padding: 5px 8px;
+    border-radius: 30px;
+    border: 2px solid rgb(255, 255, 255);
+    position: absolute;
+    top: -15px;
+    right: -55px;
+    
+    z-index:1032;
+}
+</style>
+<meta charset="ISO-8859-1"></meta>
+<title>StarWarsGallery</title>
+</head>
+
+
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<!-- <a class="navbar-brand" href="#"> lato in alto a sinistra </a>-->
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				
+      				<ul class="nav navbar-nav navbar-left">
+					 <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"th:text="#{label.opzioniUtente}">
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+             <li><a href="/listaAutoriUtente">Naviga per Autori</a></li>
+            <li><a href="/listaAnni">Naviga per anno Opera</a></li>
+          </ul>
+        </li>
+				</ul>
+					
+				<div class="navbar-brand" ><img src="/images/brand.png"
+					height="50" ></img></div>
+					
+				<div class="collapse navbar-collapse" id="myNavbar">
+      				<ul class="nav navbar-nav navbar-right">
+					 <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:text="${nomeUtente}">
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/infoUtente">Info</a></li>
+           
+          </ul>
+        </li>
+				</ul>
+				</div>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+<div class="containe">
+	<div class="title">Info Opera</div>
+	<span th:text="#{label.titolo}"></span><span th:text="${opera.titolo}"> </span><br></br>
+	<span th:text="#{label.anno}"></span><span th:text="${opera.anno}"> </span><br></br>
+	<span th:text="#{label.tecnica}"></span><span th:text="${opera.tecnica}"> </span><br></br>
+	<span th:text="#{label.dimensioni}"></span><span th:text="${opera.dimensioni}"> </span><br></br>
+	<span th:text="#{label.autore}"></span><span th:text="${autore.nome}"> </span><br></br>
+	
+	<!-- <span th:text="#{label.pathImage}"></span><span th:text="${opera.pathImage}"> </span><br></br> -->
+	
+	
+	
+	</div>	
+	<div class="imageGalleryInfo">
+	 <a href="#" class="img-rounded" data-toggle="modal" data-target="#lightbox"> 
+		<img  th:alt="${opera.titolo}" th:src="${opera.pathImage}" class="img-rounded" width="250" height="300">     
+	</a></div>
+	<div id="lightbox" class="modal fade" tabindex="-1" role="dialog"
+					aria-labelledby="myLargeModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<button type="button" class="close hidden" data-dismiss="modal"
+							aria-hidden="true">X</button>
+						<div class="modal-content">
+							<div class="modal-body">
+								<img src="" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+<script> $(document).ready(function() {
+    var $lightbox = $('#lightbox');
+    
+    $('[data-target="#lightbox"]').on('click', function(event) {
+        var $img = $(this).find('img'), 
+            src = $img.attr('src'),
+            alt = $img.attr('alt'),
+            css = {
+                'maxWidth': $(window).width() - 100,
+                'maxHeight': $(window).height() - 100
+            };
+    
+        $lightbox.find('.close').addClass('hidden');
+        $lightbox.find('img').attr('src', src);
+        $lightbox.find('img').attr('alt', alt);
+        $lightbox.find('img').css(css);
+    });
+    
+    $lightbox.on('shown.bs.modal', function (e) {
+        var $img = $lightbox.find('img');
+            
+        $lightbox.find('.modal-dialog').css({'width': $img.width()});
+        $lightbox.find('.close').removeClass('hidden');
+    });
+});</script>
+</body>
+</html>

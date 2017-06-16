@@ -1,0 +1,230 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Font google -->
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+<!-- Foglio di stile -->
+<link rel="styleSheet" href="css/starwars-index.css"></link>
+<meta charset="ISO-8859-1">
+<title>StarWarsGallery</title>
+</head>
+
+
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<!-- <a class="navbar-brand" href="#"> lato in alto a sinistra </a>-->
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+
+				</ul>
+				
+				<a class="navbar-brand" href="/"><img src="/images/brand.png"
+					height="50" /></a>
+					
+				<form class="navbar-form navbar-left"></form>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/login">Login</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<!--scorrimento immagini-->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="/images/star-wars.jpg" alt="New York" width="600"
+					height="500">
+				<div class="carousel-caption">
+					<h3>Una nuova speranza</h3>
+
+				</div>
+			</div>
+			<div class="item">
+				<img src="/images/group-jedi.jpg" alt="darth-vader" width="600"
+					height="500">
+				<div class="carousel-caption">
+					<h3>La Minaccia Fantasma</h3>
+
+				</div>
+			</div>
+			<div class="item">
+				<img src="/images/sith-group.jpg" alt="darth-vader" width="600"
+					height="500">
+				<div class="carousel-caption">
+					<h3>Darth Vader</h3>
+
+				</div>
+			</div>
+
+			<div class="item">
+				<img src="/images/millennium-falcon.jpg" alt="millennium-falcon"
+					width="600" height="500">
+				<div class="carousel-caption">
+					<h3>Millennium Falcon</h3>
+					<p></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#myCarousel" role="button"
+			data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
+			aria-hidden="true"></span> <span class="sr-only">Previous</span>
+		</a> <a class="right carousel-control" href="#myCarousel" role="button"
+			data-slide="next"> <span
+			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<!-- Descrizione di benvenuto inito al Login -->
+	
+	<div class="bg-0">
+	<div class="container text-center">
+		<h1>Benvenuto nella Galleria d'arte di StarWars</h1>
+		<p>La nostra galleria mostra Opere realizzate dai personaggi di StarWars.</p>
+		<p>Ognuno degli autori seguenti si e' impegnato a realizzare dei quadri </p>
+		<p>Se vuoi navigare nella galleria effettua il <a href="/login">login</a> oppure <a href="/registration" >registrati</a></p>
+	</div>
+	</div>
+	
+	<!-- Artisti -->
+	<div class="bg-1">
+
+		<div class="container text-center">
+			<h3>AUTORI DELLA FORZA</h3>
+			<p>Che la forza sia con te</p>
+
+			<br>
+			<div class="row">
+				<div class="col-sm-4">
+					<p>
+						<strong>Maestro Yoda</strong>
+					</p>
+					<a href="#demo" data-toggle="collapse"> <br> <img
+						src="/images/yoda.png" class="img-circle person" alt="Random Name"
+						width="300" height="400"></a>
+					<div id="demo" class="collapse">
+						<p>Gran Maestro del Consiglio Jedi</p>
+						<p>il piu' potente Cavaliere della storia dell'Ordine</p>
+
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<p>
+						<strong>Maestro Obi-One</strong>
+					</p>
+					<a href="#demo2" data-toggle="collapse"><br> <img
+						src="/images/obi-one.jpg" class="img-circle person"
+						alt="Random Name" width="300" height="400"></a>
+					<div id="demo2" class="collapse">
+						<p>E' stato il Padawan di Qui-Gon Jinn</p>
+						<p>Maestro di Anakin Skywalker e Luke Skywalker</p>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<p>
+						<strong>Maestro QuiGon</strong>
+					</p>
+					<br>
+					<a href="#demo3" data-toggle="collapse"> <img
+						src="/images/qui-gon.jpg" class="img-circle person"
+						alt="Random Name" width="300" height="400"></a>
+					<div id="demo3" class="collapse">
+						<p>E' un saggio e potente Maestro Jedi</p>
+						<p>il mentore di Obi-Wan Kenobi</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="bg-2">
+		<div class="container text-center">
+			<h3>AUTORI DEL LATO OSCURO</h3>
+			<p>Il lato oscuro e' potente in loro</p>
+
+			<br>
+			<div class="row">
+				<div class="col-sm-4">
+					<p>
+						<strong>Darth Sidious</strong>
+					</p>
+					<a href="#demo4" data-toggle="collapse"> <br> <img
+						src="/images/imperatore.jpg" class="img-circle person"
+						alt="Random Name" width="300" height="400"></a>
+					<div id="demo4" class="collapse">
+						<p>Proclama la nascita dell'Impero,</p>
+						<p>E' l'incarnazione del male puro</p>
+
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<p>
+						<strong>Darth Vader</strong>
+					</p>
+					<a href="#demo5" data-toggle="collapse"><br> <img
+						src="/images/darth-vader.jpg" class="img-circle person"
+						alt="Random Name" width="300" height="400"></a>
+					<div id="demo5" class="collapse">
+						<p>Era il prescelto per Qui-Gon Jinn</p>
+						<p>Io ti odio!!!</p>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<p>
+						<strong>Darth Moul</strong>
+					</p>
+					<br>
+					<a href="#demo6" data-toggle="collapse"> <img
+						src="/images/darth-moul.jpg" class="img-circle person"
+						alt="Random Name" width="300" height="400"></a>
+					<div id="demo6" class="collapse">
+						<p>Da piccolo preso in custodia da Darth Sidious</p>
+						<p>Il suo nome significa "macellare"</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="bg-1">
+		<div class="container">
+			<h3 class="text-center">SUGGERIMENTI</h3>
+			<p class="text-center">
+				Che la forza sia con te.
+			</p>
+		</div>
+	</div>
+</body>
+</html>

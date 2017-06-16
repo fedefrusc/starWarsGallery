@@ -1,0 +1,68 @@
+@CHARSET "ISO-8859-1";
+
+.navbar-brand{
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  padding-top: 5px;
+  
+}
+body{
+	font-family: 'Russo One', sans-serif;
+	color :#c0c0c0;
+}
+.conteiner{
+	 padding: 90px 120px;
+	
+}
+.bg-0{
+	
+	background: black;
+	border:100px solid black;
+	
+	
+	
+}
+p{
+	font-size: 18;
+}
+.descrizione{
+	background: black;
+}
+.bg-1 {
+      background: #4d4d4d;
+      color: #bdbdbd;
+  }
+.bg-2 {
+      background: #2d2d30;
+      color: #bdbdbd;
+      
+  }
+.person{
+	border: 5px solid transparent;
+	border-color:black;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 55%;
+    opacity: 0.9;
+}
+.person:hover {
+    border-color: #a2a4a2;
+}
+.carousel-inner img {
+    -webkit-filter: grayscale(1%);
+    filter: grayscale(30%); /* make all photos black and white */ 
+    width: 70%; /* Set width to 100% */
+    height:20%;
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+

@@ -1,0 +1,153 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Font google -->
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet"></link>
+<!-- Foglio di stile -->
+<!--  <link rel="styleSheet" href="css/starwars-index.css"></link>-->
+<style>
+.navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 15px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+.navbar-brand{
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  padding-top: 5px;
+  
+}
+body{
+	font-family: 'Russo One', sans-serif;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: url(images/backgroundInfoAdmin.jpeg) no-repeat center top;
+	position: fixed;
+	z-index: -1;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color :#c0c0c0;
+}
+.conteiner{
+	 padding: 90px 120px;
+	
+}
+.bg-0{
+	
+	background: black;
+	border:100px solid black;
+	
+	
+	
+}
+p{
+	font-size: 18;
+}
+.descrizione{
+	background: black;
+}
+.bg-1 {
+      background: #4d4d4d;
+      color: #bdbdbd;
+  }
+span{
+	font-family: 'Russo One', sans-serif;
+	color: black;
+	font-size: 28;
+	text-align:left;
+	padding: 10px 0;
+	position: relative;
+	top:300px;
+	left: 150px;
+}
+.title {
+	font-family: 'Russo One', sans-serif;
+	color: white;
+	font-size: 30;
+	position: relative;
+	top:280px;
+	left: 150px;
+}
+</style>
+<meta charset="ISO-8859-1"></meta>
+<title>StarWarsGallery</title>
+</head>
+
+
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<!-- <a class="navbar-brand" href="#"> lato in alto a sinistra </a>-->
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				
+      				<ul class="nav navbar-nav navbar-left">
+					 <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"th:text="#{label.opzioni}">
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/adminOpera">Inserisci Opera</a></li>
+            <li><a href="/listaAutori">Cancella Opera</a></li>
+            
+           
+          </ul>
+        </li>
+				</ul>
+					
+				<div class="navbar-brand" ><img src="/images/brand.png"
+					height="50" ></img></div>
+					
+				<div class="collapse navbar-collapse" id="myNavbar">
+      				<ul class="nav navbar-nav navbar-right">
+					 <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:text="${admin}">
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/admin">Info</a></li>
+           
+          </ul>
+        </li>
+				</ul>
+				</div>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+<div class="containe">
+	<div class="title">Info Amministratore</div>
+	<span th:text="#{label.email}"></span><span th:text="${utente.email}"> </span><br></br>
+	<span th:text="#{label.nome}"></span><span th:text="${utente.nome}"> </span><br></br>
+	<span th:text="#{label.cognome}"></span><span th:text="${utente.cognome}"> </span><br></br>
+	</div>
+	
+	
+	
