@@ -28,7 +28,7 @@ public class OperaController {
 	@Autowired
 	private UtenteService utenteService;
 
-	@GetMapping("/remove")
+	@GetMapping("/admin/remove")
 	public String removeOpera(Model model ,WebRequest request){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Utente utente = utenteService.findByEmail(auth.getName());

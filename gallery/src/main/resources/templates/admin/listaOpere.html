@@ -16,56 +16,8 @@
 <link href="https://fonts.googleapis.com/css?family=Russo+One"
 	rel="stylesheet"></link>
 <!-- Foglio di stile -->
-<!--  <link rel="styleSheet" href="css/starwars-index.css"></link>-->
-<style>
-.navbar {
-	margin-bottom: 0;
-	background-color: #2d2d30;
-	border: 0;
-	font-size: 15px !important;
-	letter-spacing: 4px;
-	opacity: 0.9;
-}
-
-.navbar-brand {
-	transform: translateX(-50%);
-	left: 50%;
-	position: absolute;
-	padding-top: 5px;
-}
-
-body {
-	font-family: 'Russo One', sans-serif;
-	
-	background: url(images/listaOpereBackground.jpg) no-repeat center top;
-	background-attachment:fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-.conteiner {
-	padding: 90px 120px;
-}
-
-legend {
-	font-family: 'Russo One', sans-serif;
-	color: white;
-	font-size: 30;
-}
-
-.listaAutori {
-	margin: 100px;
-}
-
-
-
-
-a {
-	color: white;
-}
-</style>
+ <link rel="styleSheet" href="/css/listaOpere.css"></link>
+<script src="/js/imageView.js"></script>
 <meta charset="ISO-8859-1"></meta>
 <title>StarWarsGallery</title>
 </head>
@@ -90,16 +42,15 @@ a {
 							class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="/adminOpera">Inserisci Opera</a></li>
-							<li><a href="/listaAutori">Cancella Opera</a></li>
+							<li><a href="/admin/adminOpera">Inserisci Opera</a></li>
+							<li><a href="/admin/listaAutori">Cancella Opera</a></li>
 							
 
 						</ul></li>
 				</ul>
 
-				<div class="navbar-brand">
-					<img src="/images/brand.png" height="50"></img>
-				</div>
+				<a class="navbar-brand" href="/admin/paginaAdmin"><img src="/images/brand.png"
+					height="50" ></img></a>
 
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
@@ -130,15 +81,28 @@ a {
 					<div class="row">
 					<div th:each="opera : ${listaOpere}">
 						<div class="col-sm-4">
-						<a th:href="${opera.pathImage}" target="_blank">
-						<img  th:alt="${opera.titolo}" th:src="${opera.pathImage}" class="img-rounded" width="250" height="300"></a>
-						<a th:href="@{remove(id=${opera.id})}"> Cancella Opere</a>
+							<div class="mySlide">
+							 <a href="#" class="img-rounded" data-toggle="modal" data-target="#lightbox"> 
+								<img th:alt="${opera.titolo}" th:src="${opera.pathImage}"
+									class="img-rounded" width="250" height="300"> </a><a
+									th:href="@{/admin/remove(id=${opera.id})}"> Cancella Opera </a>
+							</div>
 						</div>
 					</div>
+				</div>
+					<div id="lightbox" class="modal fade" tabindex="-1" role="dialog"
+					aria-labelledby="myLargeModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<button type="button" class="close hidden" data-dismiss="modal"
+							aria-hidden="true">X</button>
+						<div class="modal-content">
+							<div class="modal-body">
+								<img src="" alt="" />
+							</div>
+						</div>
 					</div>
-					
-					
-				
+				</div>
+
 			</fieldset>
 		</div>
 

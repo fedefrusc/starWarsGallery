@@ -29,7 +29,18 @@ public class AdminController {
 
 	@Autowired
 	private AutoreService autoreService;
+	
+	@GetMapping("/admin/paginaAdmin")
+	public String paginaAdmin(Model model){
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		Utente utente = utenteService.findByEmail(auth.getName());
 
+		model.addAttribute("admin", "Benvenuto "+utente.getNome().toUpperCase());
+		model.addAttribute("utente",utente);
+		return"admin/paginaAdmin";
+	}
+	
+	
 	@GetMapping("/admin")
 	public String getInfoAdmin(Model model){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -40,7 +51,7 @@ public class AdminController {
 		return"admin/infoAdmin";
 	}
 
-	@GetMapping("/adminOpera")
+	@GetMapping("/admin/adminOpera")
 	public String formOpera(Model model,Opera opera){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Utente utente = utenteService.findByEmail(auth.getName());
@@ -51,7 +62,7 @@ public class AdminController {
 
 
 
-	@PostMapping(value="/adminOpera")
+	@PostMapping(value="/admin/adminOpera")
 	public String salvaOpera(@Valid @ModelAttribute Opera opera,BindingResult bindingResult, Model model){
 
 		if (bindingResult.hasErrors()) {
@@ -73,7 +84,7 @@ public class AdminController {
 		}
 		return "admin/infoOpera";
 	}
-	@GetMapping("/listaAutori")
+	@GetMapping("/admin/listaAutori")
 	public String listaAutori(Model model){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Utente utente = utenteService.findByEmail(auth.getName());

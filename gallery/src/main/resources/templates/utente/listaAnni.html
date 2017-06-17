@@ -16,81 +16,9 @@
 <link href="https://fonts.googleapis.com/css?family=Russo+One"
 	rel="stylesheet"></link>
 <!-- Foglio di stile -->
-<!--  <link rel="styleSheet" href="css/starwars-index.css"></link>-->
-<style>
-.navbar {
-	margin-bottom: 0;
-	background-color: #2d2d30;
-	border: 0;
-	font-size: 15px !important;
-	letter-spacing: 4px;
-	opacity: 0.9;
-}
-
-.navbar-brand {
-	transform: translateX(-50%);
-	left: 50%;
-	position: absolute;
-	padding-top: 5px;
-}
-
-body {
-	font-family: 'Russo One', sans-serif;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: url(images/backgroundInfoAdmin.jpeg) no-repeat center top;
-	position: fixed;
-	z-index: -1;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	color: #c0c0c0;
-}
-
-.conteiner {
-	padding: 90px 120px;
-}
+<link rel="styleSheet" href="/css/listaAutori.css"></link>
 
 
-
-legend {
-	font-family: 'Russo One', sans-serif;
-	color: black;
-	font-size: 30;
-	
-}
-.listaAutori{
-margin: 200px;
-}
-span {
-	font-family: 'Russo One', sans-serif;
-	color: black;
-	font-size: 28;
-	text-align: left;
-	padding: 10px 0;
-	position: relative;
-	top: 300px;
-	left: 150px;
-}
-
-.title {
-	font-family: 'Russo One', sans-serif;
-	color: white;
-	font-size: 30;
-	position: relative;
-	top: 280px;
-	left: 150px;
-}
-a{
-color: black;
-}
-.nomeArtista{
-font-size: 20;
-}
-</style>
 <meta charset="ISO-8859-1"></meta>
 <title>StarWarsGallery</title>
 </head>
@@ -115,8 +43,8 @@ font-size: 20;
 							class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							  <li><a href="/listaAutoriUtente">Naviga per Autori</a></li>
-            				  <li><a href="/listaAnni">Naviga per anno Opera</a></li>
+							  <li><a href="/utente/listaAutoriUtente">Naviga per Autori</a></li>
+            				  <li><a href="/utente/listaAnni">Naviga per anno Opera</a></li>
 
 						</ul></li>
 				</ul>
@@ -133,7 +61,7 @@ font-size: 20;
 						</a>
 							<ul class="dropdown-menu">
 								<li><a href="/logout">Logout</a></li>
-								<li><a href="/infoUtente">Info</a></li>
+								<li><a href="/utente/infoUtente">Info</a></li>
 
 							</ul></li>
 					</ul>
@@ -151,7 +79,7 @@ font-size: 20;
 
 		
 			<div class="table" th:each="anno : ${listaAnni}">
-				<a th:href="@{/annoOpereUtente(a=${anno})}"> <div class="nomeArtista" th:text="${anno}"></div></a><br></br>
+				<a th:href="@{/utente/annoOpereUtente(a=${anno})}"> <div class="nomeArtista" th:text="${anno}"></div></a><br></br>
 			</div>
 		
 	</fieldset>

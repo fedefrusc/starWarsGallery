@@ -47,7 +47,7 @@ public class LoginController {
 	    }
 	 
 	 
-	 @RequestMapping(value="/defoult", method = RequestMethod.GET)
+	 @RequestMapping(value="/default", method = RequestMethod.GET)
 	 public String home(Model model){
 		 Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		 Utente utente = utenteService.findByEmail(auth.getName());

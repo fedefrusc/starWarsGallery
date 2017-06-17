@@ -39,7 +39,7 @@ public class UtenteController {
 	private AutoreService autoreService;
 
 	
-	@GetMapping("/listaAutoriUtente")
+	@GetMapping("/utente/listaAutoriUtente")
 	public String listaAutori(Model model){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Utente utente = utenteService.findByEmail(auth.getName());
@@ -48,7 +48,7 @@ public class UtenteController {
 		model.addAttribute("listaAutori", autoreService.findAll());
 		return"utente/listaAutori";
 	}
-	@GetMapping("opereAutoreUtente")
+	@GetMapping("/utente/opereAutoreUtente")
 	public String opereArtista(Model model, WebRequest request){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Utente utente = utenteService.findByEmail(auth.getName());
@@ -60,7 +60,7 @@ public class UtenteController {
 		model.addAttribute(autore);
 		return "utente/listaOpere";
 	}
-	@GetMapping("infoOpera")
+	@GetMapping("/utente/infoOpera")
 	public String infoOpera(Model model, WebRequest request){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Utente utente = utenteService.findByEmail(auth.getName());
@@ -76,7 +76,7 @@ public class UtenteController {
 		
 		return "utente/infoOpera";
 	}
-	@GetMapping("/listaAnni")
+	@GetMapping("/utente/listaAnni")
 	public String listaAnni(Model model){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Utente utente = utenteService.findByEmail(auth.getName());
@@ -93,7 +93,7 @@ public class UtenteController {
 	
 	
 	
-	@GetMapping("/annoOpereUtente")
+	@GetMapping("/utente/annoOpereUtente")
 	public String operaPerAnno(Model model,WebRequest request){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Utente utente = utenteService.findByEmail(auth.getName());
@@ -104,7 +104,7 @@ public class UtenteController {
 		model.addAttribute("listaOpere", operaService.findByAnno(anno));
 		return "utente/listaOpere";
 	}
-	@GetMapping("/infoUtente")
+	@GetMapping("/utente/infoUtente")
 	public String getInfoUtente(Model model){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Utente utente = utenteService.findByEmail(auth.getName());

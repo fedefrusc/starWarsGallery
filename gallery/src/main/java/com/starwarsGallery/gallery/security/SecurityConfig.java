@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/utente/**").hasAuthority("USER").anyRequest().authenticated()
 		.and().csrf().disable().formLogin()
 		.loginPage("/login").failureUrl("/login?error=true")
-		.defaultSuccessUrl("/defoult")
+		.defaultSuccessUrl("/default")
 		.usernameParameter("email")
 		.passwordParameter("password")
 		.and().logout()
@@ -63,6 +63,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 		web
 		.ignoring()
-		.antMatchers("/resources/**", "/static/**", "/css/**", "/images/**");
+		.antMatchers("/resources/**", "/static/**", "/css/**", "/images/**","/js/**");
 	}
 }
