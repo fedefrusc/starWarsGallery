@@ -39,8 +39,9 @@ public class LoginController {
 	            return "registration";
 	        }
 	        else {
+	        		
 	            	model.addAttribute(utente);
-	            	model.addAttribute("successMessage", "User has been registered successfully");
+	            	model.addAttribute("successMessage", "Utente Registarto con Successo");
 	                utenteService.add(utente); 
 	            }
 	        return "registrationConfirm";
