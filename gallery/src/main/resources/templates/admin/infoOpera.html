@@ -15,89 +15,9 @@
 <!-- Font google -->
 <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet"></link>
 <!-- Foglio di stile -->
-<!--  <link rel="styleSheet" href="css/starwars-index.css"></link>-->
-<style>
-.navbar {
-    margin-bottom: 0;
-    background-color: #2d2d30;
-    border: 0;
-    font-size: 15px !important;
-    letter-spacing: 4px;
-    opacity:0.9;
-}
-.navbar-brand{
-  transform: translateX(-50%);
-  left: 50%;
-  position: absolute;
-  padding-top: 5px;
-  
-}
-body{
-	font-family: 'Russo One', sans-serif;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: url(images/backgroundInfoAdmin.jpeg) no-repeat center top;
-	position: fixed;
-	z-index: -1;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	color :#c0c0c0;
-}
-.conteiner{
-	 padding: 90px 120px;
-	
-}
-.imageGalleryInfo{
-padding: 100px 600px;
- position: absolute;
-   top: 50%;
-   left: 50%;
-   width: 500px;
-   height: 500px;
-   margin-top: -220px; /* Half the height */
-   margin-left: -750px; /* Half the width */
-}
-.bg-0{
-	
-	background: black;
-	border:100px solid black;
-	
-	
-	
-}
-p{
-	font-size: 18;
-}
-.descrizione{
-	background: black;
-}
-.bg-1 {
-      background: #4d4d4d;
-      color: #bdbdbd;
-  }
-span{
-	font-family: 'Russo One', sans-serif;
-	color: black;
-	font-size: 28;
-	text-align:left;
-	padding: 10px 0;
-	position: relative;
-	top:300px;
-	left: 150px;
-}
-.title {
-	font-family: 'Russo One', sans-serif;
-	color: white;
-	font-size: 30;
-	position: relative;
-	top:280px;
-	left: 150px;
-}
-</style>
+<link rel="styleSheet" href="/css/infoOpera.css"></link>
+<!-- Script -->
+<script src="/js/imageView.js"></script>
 <meta charset="ISO-8859-1"></meta>
 <title>StarWarsGallery</title>
 </head>
@@ -121,16 +41,15 @@ span{
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="/adminOpera">Inserisci Opera</a></li>
-            <li><a href="/listaAutori">Cancella Opera</a></li>
+            <li><a href="/admin/adminOpera">Inserisci Opera</a></li>
+            <li><a href="/admin/listaAutori">Cancella Opera</a></li>
             
            
           </ul>
         </li>
 				</ul>
-					
-				<div class="navbar-brand" ><img src="/images/brand.png"
-					height="50" ></img></div>
+				<a class="navbar-brand" href="/admin/paginaAdmin"><img src="/images/brand.png"
+					height="50" ></img></a>
 					
 				<div class="collapse navbar-collapse" id="myNavbar">
       				<ul class="nav navbar-nav navbar-right">
@@ -161,11 +80,27 @@ span{
 	<span th:text="#{label.autore}"></span><span th:text="${autore.nome}"> </span><br></br>
 	<!-- <span th:text="#{label.pathImage}"></span><span th:text="${opera.pathImage}"> </span><br></br> -->
 	
-	</div>
+	</div>	
 	<div class="imageGalleryInfo">
-	 <a th:href="${opera.pathImage}" target="_blank">
+	 <a href="#" class="img-rounded" data-toggle="modal" data-target="#lightbox"> 
 		<img  th:alt="${opera.titolo}" th:src="${opera.pathImage}" class="img-rounded" width="250" height="300">     
 	</a></div>
+	<div id="lightbox" class="modal fade" tabindex="-1" role="dialog"
+					aria-labelledby="myLargeModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<button type="button" class="close hidden" data-dismiss="modal"
+							aria-hidden="true">X</button>
+						<div class="modal-content">
+							<div class="modal-body">
+								<img src="" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
 		
 </body>
 </html>

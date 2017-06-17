@@ -17,6 +17,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.springframework.data.annotation.Transient;
 
 @Entity
@@ -30,8 +31,7 @@ public class Utente {
     private Long id;
 	
 	@NotNull
-	@Size(min=2, max=30)
-	
+	@Email
 	private String email;
 	
 	@NotNull

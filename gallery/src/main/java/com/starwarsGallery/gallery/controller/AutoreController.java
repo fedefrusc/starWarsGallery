@@ -26,7 +26,7 @@ public class AutoreController {
 
 	@Autowired
 	private UtenteService utenteService;
-	@GetMapping("opereAutore")
+	@GetMapping("/admin/opereAutore")
 	public String opereArtista(Model model, WebRequest request){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Utente utente = utenteService.findByEmail(auth.getName());

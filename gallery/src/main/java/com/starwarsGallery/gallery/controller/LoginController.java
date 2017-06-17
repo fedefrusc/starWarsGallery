@@ -39,15 +39,16 @@ public class LoginController {
 	            return "registration";
 	        }
 	        else {
+	        		
 	            	model.addAttribute(utente);
-	            	model.addAttribute("successMessage", "User has been registered successfully");
+	            	model.addAttribute("successMessage", "Utente Registarto con Successo");
 	                utenteService.add(utente); 
 	            }
 	        return "registrationConfirm";
 	    }
 	 
 	 
-	 @RequestMapping(value="/defoult", method = RequestMethod.GET)
+	 @RequestMapping(value="/default", method = RequestMethod.GET)
 	 public String home(Model model){
 		 Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		 Utente utente = utenteService.findByEmail(auth.getName());
